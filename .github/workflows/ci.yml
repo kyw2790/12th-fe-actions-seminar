@@ -1,25 +1,21 @@
-name : Check Build Possiblity
+name: Check Build Possibility
 
 on:
   pull_request:
-    branches : ["main"]
-
+    branches: ["main"]
 
 jobs:
-  #build 명령어 실행으로 빌드 가능 여부 검증
+  # 1. Build 명령어를 활용한 테스트 진행
   build-test:
-    runs-on : ubuntu-20.04
+    runs-on: ubuntu-20.04
     env:
-      DISABLE_ESLINT_PULGIN : true
-     steps: # 밑에 있는 것을 순차적으로 진행한다
-      - uses: actions/checkout@v3 #feature 브랜치의  
-      - uses: actions/setup-node@v3.5.1 #노드 설치 명령어를 다 담고 있는것 
+      DISABLE_ESLINT_PLUGIN: true
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3.5.1
         with:
           node-version: "21.2.0"
       - name: Install dependencies
         run: npm install
       - name: Try build
-        run: npm run build     
-        #별도의 서버로 진행되기때문에 서버 마다 step을 다 쳐줘야함
-
-        
+        run: npm run build

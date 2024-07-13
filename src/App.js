@@ -9,7 +9,7 @@ function App() {
         <p>멋쟁이사자처럼 영남대학교 12기 아기사자 권예원</p>
         <a
           className="App-link"
-          href="https://jinlee.kr/"
+          href="https://naver.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
